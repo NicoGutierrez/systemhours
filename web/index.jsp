@@ -8,13 +8,41 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+        <script src="css/jquery.mobile-1.2.0.min.css"></script>
+    <script src="js/jquery.mobile-1.2.0.min.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bienvenido al sistema</title>
     </head>
     <body>
-        <h1>Bienvenido al sistema de inscripcion de catedra</h1>
+        <!-- Home -->
+    <div data-role="page" id="page1">
+        <div data-role="content">
+            <div data-role="content">
+                <h1>Bienvenido al sistema de inscripcion de catedra</h1>
+            </div>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li>
+                        <a href="#page1" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
+                            Ingreso alumnos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page1" data-theme="" data-icon="">
+                            Ingreso Monitores
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <div data-role="page" id="page1">
+            
+            <a href="AlumnosMain.jsp">Ingreso alumnos</a>
+            <br></br>
+            <a href="">Ingreso Monitores</a>
+        </div>
     </body>
-    <a href="AlumnosMain.jsp">Ingreso alumnos</a>
-    <br></br>
-    <a href="">Ingreso Monitores</a>
+    
 </html>
