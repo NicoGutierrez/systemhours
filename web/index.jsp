@@ -12,6 +12,9 @@
         <title>Bienvenido al sistema</title>
     </head>
     <body>
-        <h1>Bienvenido</h1>
+        <h1>Bienvenido al sistema de inscripcion de catedra</h1>
     </body>
+    <a href="AlumnosMain.jsp">Ingreso alumnos</a>
+    <br></br>
+    <a href="">Ingreso Monitores</a>
 </html>
