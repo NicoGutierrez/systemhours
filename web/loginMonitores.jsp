@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
         <script src="js/jquery-1.8.3.min.js"></script>
         <script src="js/jquery.mobile-1.2.0.min.js"></script>
+        <script language="javascript" type="text/javascript" src="js/validaciones.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bienvenido al sistema</title>
     </head>
@@ -25,21 +26,21 @@
             <div data-role="content" style="padding: 10%">
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-mini="true">
-                        <label for="textinput1">
+                        <label for="usuario">
                             Usuario
                         </label>
-                        <input name="" id="textinput1" placeholder="" value="" type="password" />
+                        <input name="usuario" id="usuario" placeholder="" value="" type="password" />
                     </fieldset>
                 </div>
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-mini="true">
-                        <label for="textinput2">
+                        <label for="contrasena">
                             Contraseña
                         </label>
-                        <input name="" id="textinput2" placeholder="" value="" type="password" />
+                        <input name="contrasena" id="contrasena" placeholder="" value="" type="password" />
                     </fieldset>
                 </div>
-                <a data-role="button" data-inline="true" data-theme="b" href="#page1">
+                <a data-role="button" onclick=" return validarform();" data-inline="true" data-theme="b" href="index.jsp">
                     Ingresar
                 </a>
             </div>

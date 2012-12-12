@@ -1,6 +1,6 @@
 <%-- 
-    Document   : loginAlumnos
-    Created on : 05-12-2012, 10:12:31 PM
+    Document   : web-admin
+    Created on : 12-12-2012, 12:11:49 AM
     Author     : Nico
 --%>
 
@@ -14,18 +14,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bienvenido al sistema</title>
     </head>
-    <body>
-        <div data-role="page" data-theme="h" id="page1">
+    <body><div data-role="page" data-theme="h" id="page1">
             <div data-theme="b" data-role="header">
                 <h3>
-                    Login Alumnos
+                    Login Administrador
                 </h3>
                 <a data-role="button" data-rel="back" href="#page1" data-icon="back" data-iconpos="left" class="ui-btn-left">
                     Volver
                 </a>
             </div>
             <div data-role="content" style="padding: 10%">
-             <form id="form" name="form" action="index.jsp" method="get">
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-mini="true">
                         <label for="usuario">
@@ -42,19 +40,11 @@
                         <input name="contrasena" id="contrasena" placeholder="" value="" type="password" />
                     </fieldset>
                 </div>
-                <a data-role="button" type="submit" onclick="return validarform();"   data-inline="true" data-theme="b" href="index.jsp">
+                <a data-role="button" type="submit" onclick="return validarform();"   data-inline="true" data-theme="b" href="indexadmin.jsp">
                          Ingresar
                 </a>
-              </form>
             </div>
         </div>
-        
-        
-        
-    
-    
-    
-    
-    </body>
+       </body>
 </head>
 </html>
