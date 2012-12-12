@@ -17,18 +17,22 @@
         <!-- Home -->
     <div data-role="page" id="page1">
         <div data-role="content">
-            <div data-role="content">
+            <div data-theme="a" data-role="header">
                 <h1>Bienvenido al sistema de inscripcion de catedra</h1>
+                
+                
             </div>
+            <br>
+            <br>
             <div data-role="navbar" data-iconpos="top">
                 <ul>
                     <li>
-                        <a href="#page1" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
+                        <a href="loginAlumnos.jsp" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
                             Ingreso alumnos
                         </a>
                     </li>
                     <li>
-                        <a href="#page1" data-theme="" data-icon="">
+                        <a href="loginMonitores.jsp" data-theme="" data-icon="">
                             Ingreso Monitores
                         </a> 
                     </li>
@@ -36,10 +40,6 @@
             </div>
         </div>
     </div>
-        <div data-role="page" id="page1">
-            <a href="AlumnosMain.jsp">Ingreso alumnos</a>
-            <br></br>
-            <a href="">Ingreso Monitores</a>
-        </div>
+       
     </body>
 </html>
