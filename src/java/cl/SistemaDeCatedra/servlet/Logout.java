@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.apache.catalina.Session;
 
 /**
  *
@@ -56,6 +57,11 @@ public class Logout extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        HttpSession session = request.getSession();
+        session.removeAttribute("alumno");
+        session.removeAttribute("monitor");
+        session.removeAttribute("admin");
+        
     }
 
     /**

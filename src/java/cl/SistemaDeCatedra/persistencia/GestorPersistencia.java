@@ -2,6 +2,7 @@
 package cl.SistemaDeCatedra.persistencia;
 
 import cl.SistemaDeCatedra.perfiles.Alumno;
+import cl.SistemaDeCatedra.perfiles.Monitor;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,7 +36,7 @@ public class GestorPersistencia {
         try {
             if (!conecctionOk){
                     System.out.println("Error al intentar acceder se usa el usuario jperez con contrasenna 123");
-                   return new Alumno("juan", "perez", "12/08/1584", "jperez", "123");
+                   return new Alumno("jperez", "123", "juan perez", "123", "12/08/1584");
             }
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM  Alumnos WHERE  `usuario` = '"+usuario+"'"); 
@@ -47,6 +48,29 @@ public class GestorPersistencia {
             String fnacimiento = rs.getString("fechaNacimiento");
             String password = rs.getString("contrasenna");
             return new Alumno(nombre, apellidos, fnacimiento, usuario, password);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(GestorPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }   
+        return null;
+    }
+    
+    public Monitor getMonitor(String usuario){
+        try {
+            if (!conecctionOk){
+                    System.out.println("Error al intentar acceder se usa el usuario jperez con contrasenna 123");
+                   return new Monitor("jperez", "123", "juan monitor", "123", "12/08/1864");
+            }
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM  Alumnos WHERE  `usuario` = '"+usuario+"'"); 
+  
+            if (!rs.next())
+                return null;
+            String nombre = rs.getString("nombres");
+            String apellidos = rs.getString("apellidos");
+            String fnacimiento = rs.getString("fechaNacimiento");
+            String password = rs.getString("contrasenna");
+            return new Monitor(nombre, apellidos, fnacimiento, usuario, password);
             
         } catch (SQLException ex) {
             Logger.getLogger(GestorPersistencia.class.getName()).log(Level.SEVERE, null, ex);

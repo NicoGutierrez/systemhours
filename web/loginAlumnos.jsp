@@ -4,6 +4,7 @@
     Author     : Nico
 --%>
 
+<%@page import="cl.SistemaDeCatedra.perfiles.Alumno"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
@@ -18,8 +19,10 @@
         <div data-role="page" data-theme="h" id="page1">
             <div data-theme="b" data-role="header">
                 <h3>
-                    Error Usuario y o contraseña invalidos
+                    Login Alumnos
                 </h3>
+                
+                        
                 <a data-role="button" data-rel="back" href="#page1" data-icon="back" data-iconpos="left" class="ui-btn-left">
                     Volver
                 </a>
@@ -40,8 +43,11 @@
                             Contraseña
                         </label>
                         <input name="contrasena" id="contrasena" placeholder="" value="" type="password" />
+                        <br />
+                        <br />
+                        <br />
+                        <input type="submit" value="Ingresar" data-mini="true" data-theme="b">
                     </fieldset>
-                    <input type="submit" value="Ingresar" data-mini="true">
                 </div>
                 
                  <input type="hidden" name="tipo" value="alumno" />

@@ -24,12 +24,13 @@
                 </a>
             </div>
             <div data-role="content" style="padding: 10%">
+                 <form id="form" name="form" action="/SistemaDeCatedra/Login" method="post">
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-mini="true">
                         <label for="usuario">
                             Usuario
                         </label>
-                        <input name="usuario" id="usuario" placeholder="" value="" type="password" />
+                        <input name="usuario" id="usuario" placeholder="" value="" type="text" />
                     </fieldset>
                 </div>
                 <div data-role="fieldcontain">
@@ -38,11 +39,17 @@
                             Contraseña
                         </label>
                         <input name="contrasena" id="contrasena" placeholder="" value="" type="password" />
+                        <br />
+                        <br />
+                        <br />
+                        <input type="submit" value="Ingresar" data-mini="true" data-theme="b">
                     </fieldset>
+                    
                 </div>
-                <a data-role="button" onclick=" return validarform();" data-inline="true" data-theme="b" href="index.jsp">
-                    Ingresar
-                </a>
+                     
+                      <input type="hidden" name="tipo" value="alumno" />
+                </form>
+               
             </div>
         </div>
         

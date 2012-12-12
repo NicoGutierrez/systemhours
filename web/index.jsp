@@ -3,6 +3,7 @@
     Created on : 14-nov-2012, 22:29:24
     Author     : sam
 --%>
+<%@page import="cl.SistemaDeCatedra.perfiles.Alumno"%>
 <%@page import="cl.SistemaDeCatedra.persistencia.GestorPersistencia"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,9 +21,7 @@
     <div data-role="page" id="page1">
         <div data-role="content">
             <div data-theme="a" data-role="header">
-                <h1>Bienvenido al sistema de inscripcion de catedra</h1>
-                
-                
+                <h1>Bienvenido al sistema de inscripcion de catedra </h1>
             </div>
             <br>
             <br>
