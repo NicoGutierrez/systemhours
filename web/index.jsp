@@ -3,7 +3,6 @@
     Created on : 14-nov-2012, 22:29:24
     Author     : sam
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -31,18 +30,16 @@
                     <li>
                         <a href="#page1" data-theme="" data-icon="">
                             Ingreso Monitores
-                        </a>
+                        </a> 
                     </li>
                 </ul>
             </div>
         </div>
     </div>
         <div data-role="page" id="page1">
-            
             <a href="AlumnosMain.jsp">Ingreso alumnos</a>
             <br></br>
             <a href="">Ingreso Monitores</a>
         </div>
     </body>
-    
 </html>
