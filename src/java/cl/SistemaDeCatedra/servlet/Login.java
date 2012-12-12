@@ -4,7 +4,11 @@
  */
 package cl.SistemaDeCatedra.servlet;
 
+import cl.SistemaDeCatedra.perfiles.Alumno;
+import cl.SistemaDeCatedra.perfiles.GestorUsuario;
+import cl.SistemaDeCatedra.perfiles.Monitor;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.apache.catalina.Session;
 
 /**
  *
@@ -32,8 +37,7 @@ public class Login extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/versionweb/login/login.jsp");
-        requestDispatcher.forward(request, response);
+
         
     }
 
@@ -50,7 +54,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
     }
 
     /**
@@ -65,34 +69,47 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String id = request.getParameter("user");
-        String contrasena = request.getParameter("password");
-        int idEntero = 0;
-        try {
-            idEntero = Integer.parseInt(id);
-        }catch(Exception e){
-            response.getWriter().write("Error al validar su rut");
-            return;
-        }
-        /*
-        GestorUsuario gestorUsuario = new GestorUsuario();
-        Encargado encargado = gestorUsuario.getEncargado(idEntero);
-        Cliente cliente = gestorUsuario.getCliente(idEntero);
-        
-        
+        PrintWriter out = response.getWriter();
+        processRequest(request, response);
         HttpSession session = request.getSession(true);
-        if (cliente!=null){
-            session.setAttribute("cliente", cliente);
-            System.out.println("Cliente");
-        }
-        if (encargado!=null){
-            session.setAttribute("encargado", encargado);
-            System.out.println("encargado");
-        }
-        * */
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
-        requestDispatcher.forward(request, response);
         
+        String usuario = request.getParameter("usuario");
+        String contrasena = request.getParameter("contrasena");
+        String tipo = request.getParameter("tipo");
+  
+        GestorUsuario gestorUsuario = new GestorUsuario();
+        
+        
+        if (tipo.compareToIgnoreCase("alumno")==0){
+            
+            Alumno alumno = gestorUsuario.getAlumno(usuario);
+            
+            if (alumno!=null && alumno.compareAlumno(usuario, contrasena)){
+                session.setAttribute("alumno", alumno);
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
+                requestDispatcher.forward(request, response);
+            }else{
+                out.println("<div data-role=\"page\" data-theme=\"h\" id=\"page1\">\n" +
+                                "</a>"+
+                                "<div data-theme=\"b\" data-role=\"content\">\n" +
+                                    "<h3>\n" +
+                                        "Error Usuario y o contraseña invalidos\n" +
+                                    "</h3>\n" +
+                                "</div>\n" +
+                        "<a data-role=\"button\" data-rel=\"back\" href=\"#page1\" data-icon=\"back\" data-iconpos=\"left\" class=\"ui-btn-left\">\n" +
+                                    "Volver\n" +
+                                
+                            "</div>");
+            }
+        }else if (tipo.compareToIgnoreCase("monitor")==0){
+            Monitor monitor = gestorUsuario.getMonitor(usuario);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
+            requestDispatcher.forward(request, response);
+        }else{ 
+            out.println("Error al recibir sus datos");
+            
+        }
+
         
     }
 

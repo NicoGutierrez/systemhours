@@ -3,8 +3,10 @@
     Created on : 14-nov-2012, 22:29:24
     Author     : sam
 --%>
+<%@page import="cl.SistemaDeCatedra.persistencia.GestorPersistencia"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<% new GestorPersistencia(); %>
 <html>
     <head>
         <link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />

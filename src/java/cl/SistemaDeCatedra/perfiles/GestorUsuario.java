@@ -1,14 +1,17 @@
 package cl.SistemaDeCatedra.perfiles;
 
+import cl.SistemaDeCatedra.persistencia.GestorPersistencia;
 import java.util.ArrayList;
 
 public class GestorUsuario {
     private ArrayList<Monitor> monitores;
     private ArrayList<Alumno> alumnos;
+    private GestorPersistencia persistencia;
     
 	public GestorUsuario() {
         monitores = new ArrayList<Monitor>();
         alumnos = new ArrayList<Alumno>();
+        persistencia = new GestorPersistencia();
 	}
     /**
      * 
@@ -37,5 +40,31 @@ public class GestorUsuario {
         monitores.add(monitor);
         return true;
 	}
+        /**
+         * @param usuario
+         * @return Alumno
+         */
+        public Alumno getAlumno(String usuario){
+            for (Alumno alumno:alumnos)
+                if (alumno.getUsuario().equalsIgnoreCase(usuario))
+                    return alumno;
+            
+            Alumno alumno = persistencia.getAlumno(usuario);
+            if (alumno!=null)
+                return alumno;
+            return null;
+        }
+        /**
+         * @param usuario
+         * @return Alumno
+         */
+        public Monitor getMonitor(String usuario){
+            for (Monitor monitor:monitores)
+                if (monitor.getUsuario().equalsIgnoreCase(usuario))
+                    return monitor;
+            
+            return new Monitor("Juna", "123", "Juan", "MOnitor", "18/08/1998");
+            
+        }
     
 }

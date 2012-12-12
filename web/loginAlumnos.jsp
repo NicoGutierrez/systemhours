@@ -18,14 +18,14 @@
         <div data-role="page" data-theme="h" id="page1">
             <div data-theme="b" data-role="header">
                 <h3>
-                    Login Alumnos
+                    Error Usuario y o contraseña invalidos
                 </h3>
                 <a data-role="button" data-rel="back" href="#page1" data-icon="back" data-iconpos="left" class="ui-btn-left">
                     Volver
                 </a>
             </div>
             <div data-role="content" style="padding: 10%">
-             <form id="form" name="form" action="index.jsp" method="get">
+             <form id="form" name="form" action="/SistemaDeCatedra/Login" method="post">
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-mini="true">
                         <label for="usuario">
@@ -41,20 +41,13 @@
                         </label>
                         <input name="contrasena" id="contrasena" placeholder="" value="" type="password" />
                     </fieldset>
+                    <input type="submit" value="Ingresar" data-mini="true">
                 </div>
-                <a data-role="button" type="submit" onclick="return validarform();"   data-inline="true" data-theme="b" href="index.jsp">
-                         Ingresar
-                </a>
+                
+                 <input type="hidden" name="tipo" value="alumno" />
               </form>
             </div>
-        </div>
-        
-        
-        
-    
-    
-    
-    
+        </div> 
     </body>
 </head>
 </html>

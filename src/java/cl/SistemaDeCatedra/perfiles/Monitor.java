@@ -10,9 +10,18 @@ package cl.SistemaDeCatedra.perfiles;
  * @author sam
  */
 public class Monitor extends Usuario{
+    private String usuario;
+    private String contrasenna;
 
-    public Monitor(String nombre, String apellidos, String fNacimiento, String usuario, String password) {
-        super(nombre, apellidos, fNacimiento, usuario, password);
+    public Monitor(String usuario, String contrasenna, String nombre, String apellidos, String fNacimiento) {
+        super(nombre, apellidos, fNacimiento);
+        this.usuario = usuario;
+        this.contrasenna = contrasenna;
+    }
+ 
+
+    public String getUsuario() {
+        return usuario;
     }
     
 }

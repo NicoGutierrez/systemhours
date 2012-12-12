@@ -35,8 +35,8 @@ public class Logout extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
-        session.setAttribute("alumno", null);
-        session.setAttribute("monitor", null);
+        session.removeAttribute("alumno");
+        session.removeAttribute("monitor");
         RequestDispatcher requestDispatcher =
             request.getRequestDispatcher("index.jsp");
             requestDispatcher.forward(request, response);
